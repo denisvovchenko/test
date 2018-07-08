@@ -1,0 +1,188 @@
+@font-face {
+	font-family: "Myriad Pro";
+	src: 
+		url("../fonts/Myriad Pro Regular.ttf") format("ttf");
+}
+
+.page {
+	font-family: Roboto, Arial, sans-serif;
+
+}
+
+.list {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.container {
+	max-width: 1190px;
+	padding: 0 10px;
+}
+
+
+.page-header {
+	margin-bottom: 79px;
+
+	border-bottom: 2px solid #8a8a8a;
+}
+
+.page-header__top {
+	height: 748px;
+	padding-top: 19px;
+
+	background: #f9f9f9 url("../img/bg.jpg") no-repeat top;
+}
+
+.logo {
+	margin-bottom: 40px;
+}
+
+.test-title {
+	margin-bottom: 4px;
+
+	color: #131313;
+	font-size: 18px;
+	font-weight: 300;
+}
+
+.page-title {
+	margin-bottom: 10px;
+
+	color: #ffffff;
+	font-size: 51px;
+	font-weight: 700;
+}
+
+.page-descr {
+	display: inline-block;
+	width: 57.5%;
+	padding: 3px 1%;
+	
+	font-size: 22px;
+	color: #ffffff;
+	text-align: center;
+
+	background: #000000;
+}
+
+.page-descr::first-letter {
+	color: #009de0;
+}
+
+.nav-item {
+	padding: 36px 0 35px;
+	margin-right: 3.57%;
+}
+
+.nav-item:last-child {
+	margin: 0;
+}
+
+.nav-link {
+	padding: 5px 0;
+
+	color: #383838;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.nav-link-active {
+	box-shadow: inset 0 -3px 0 #00aeef;
+}
+
+
+.offers {
+	position: relative;
+}
+
+.offers-title {	
+	display: inline-block;
+	padding: 0 75px;
+	margin-bottom: 20px;
+
+	color: #383838;
+	font-size: 26px;
+	font-weight: 400;
+	line-height: 20px;
+
+	background: #ffffff;
+}
+
+.offers-title::before {
+	content: "";
+	position: absolute;
+	top: 10px;
+	left: 0;
+	z-index: -1;
+
+	width: 100%;
+	height: 6px;
+
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+	border-image: linear-gradient(to right, transparent 0%, rgba(241, 241, 241, 1) 20%, rgba(228, 228, 228, 1) 50%, rgba(241, 241, 241, 1) 80%, transparent 100%);
+	border-image-slice: 20%;
+}
+
+.offers-descr {
+	margin-bottom: 45px;
+	
+	color: #8a8a8a;
+	font-size: 16px;
+	line-height: 16px;
+}
+
+.card {
+	flex-basis: 28.7% !important;
+	border: none;
+}
+
+.card-img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-self: center;
+	width: 100px;
+	height: 100px;
+	margin-bottom: 10px;
+
+	background-color: #383838;
+	border-radius: 50%;
+}
+
+.svg-offers-icon {
+	fill: #e4e4e4;
+}
+
+.card-title {
+	margin-bottom: 20px;
+
+	font-size: 14px;
+	color: #606060;
+
+	text-transform: uppercase;
+}
+
+.card-text {
+	margin-bottom: 40px;
+
+	font-size: 14px;
+	color: #7a7a7a;
+}
+
+.btn-light {
+	color: #8a8a8a;
+	font-size: 10px;
+
+	box-shadow: 0 0 0 1px #dedede;
+}
+
+.card:hover .card-img,
+.card:hover .btn,
+.offers-btn:focus {
+	color: #e3e3e3;
+
+	background-color: #00aeef;
+	box-shadow: none;
+}
