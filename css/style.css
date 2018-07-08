@@ -1,7 +1,7 @@
 @font-face {
 	font-family: "Myriad Pro";
 	src: 
-		url("../fonts/Myriad Pro Regular.ttf") format("ttf");
+		url("../fonts/Myriad Pro Regular.otf") format("otf");
 }
 
 .page {
@@ -94,6 +94,8 @@
 
 .offers {
 	position: relative;
+
+	margin-bottom: 100px;
 }
 
 .offers-title {	
@@ -133,30 +135,50 @@
 	line-height: 16px;
 }
 
+.offers-list {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 0.5%;
+}
+
 .card {
-	flex-basis: 28.7% !important;
+	flex-basis: 30.5%;
+	padding: 0 0.1%;
+
 	border: none;
 }
 
 .card-img {
 	display: flex;
-	justify-content: center;
-	align-items: center;
 	align-self: center;
 	width: 100px;
 	height: 100px;
-	margin-bottom: 10px;
+	margin-bottom: 35px;
 
 	background-color: #383838;
 	border-radius: 50%;
+}
+
+.card-body {
+	align-self: center;
+	padding: 0;
+}
+
+.offers-svg {
+	margin: auto;
 }
 
 .svg-offers-icon {
 	fill: #e4e4e4;
 }
 
+.offers-svg-puzzle {
+	margin-top: 31%;
+	margin-left: 30%;
+}
+
 .card-title {
-	margin-bottom: 20px;
+	margin-bottom: 12px;
 
 	font-size: 14px;
 	color: #606060;
@@ -178,6 +200,13 @@
 	box-shadow: 0 0 0 1px #dedede;
 }
 
+.offers-btn {
+	padding-top: 5px;
+	padding-left: 9px;
+	padding-right: 11px;
+	padding-bottom: 5px;
+}
+
 .card:hover .card-img,
 .card:hover .btn,
 .offers-btn:focus {
@@ -185,4 +214,113 @@
 
 	background-color: #00aeef;
 	box-shadow: none;
+}
+
+
+
+
+.features {
+	position: relative;
+
+	/*padding-top: 70px;*/
+	padding-bottom: 50px;
+
+	background: #383838;
+}
+
+.features-key {
+	position: relative;
+
+	width: 50px;
+	height: 50px;
+	margin: 0 auto 70px;
+
+	background: #00aeef;
+
+	transform: rotate(45deg);
+}
+
+.features-key::before {
+	content: "";
+	position: absolute;
+	top: 0;
+
+	width: 22px;
+	height: 21px;
+
+	background: url("../img/svg/icon_key.svg") no-repeat;
+}
+
+.features-title {
+	font-size: 26px;
+	font-weight: 700;
+	line-height: 20px;
+	color: #e4e4e4;
+}
+
+.blue-text {
+	color: #00aeef;
+}
+
+.features-descr {
+	margin-bottom: 85px;
+
+	font-family: "Myriad Pro", sans-serif;
+	color: #606060;
+}
+
+.features-item {
+	position: relative;
+
+	padding-left: 90px;
+	margin-bottom: 64px;
+}
+
+.features-item:last-child {
+	margin-bottom: 0;
+}
+
+.features-item::before {
+	content: "";
+	position: absolute;
+	top: 10px;
+}
+
+.features-item-responsive::before {
+	left: 12px;	
+
+	width: 42px;
+	height: 37px;
+
+	background: url("../img/svg/icon_desktop.svg") no-repeat;
+}
+
+.features-item-marketing::before {
+	left: 17px;
+
+	width: 35px;
+	height: 41px;
+
+	background: url("../img/svg/icon_puzzle_alt.svg") no-repeat;
+}
+
+.features-item-customers::before {
+	left: 16px;
+
+	width: 40px;
+	height: 39px;
+
+	background: url("../img/svg/icon_star.svg") no-repeat;
+}
+
+.features-item-title {
+	margin-bottom: 20px;
+
+	font-size: 14px;
+	font-weight: 700;
+	color: #e4e4e4;
+}
+
+.features-item-text {
+	color: #7a7a7a;
 }
