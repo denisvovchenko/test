@@ -87,7 +87,18 @@
 }
 
 .nav-link-active {
-	box-shadow: inset 0 -3px 0 #00aeef;
+	position: relative;
+}
+
+.nav-link-active::before {
+	content: "";
+	position: absolute;
+	bottom: 1px;
+
+	width: 100%;
+	height: 3px;
+
+	background: #00aeef;
 }
 
 .offers {
@@ -110,24 +121,48 @@
 	letter-spacing: 0.7px;
 }
 
-.offers-title::before {
+.offers-title::before,
+.offers-title::after {
 	content: "";
 	position: absolute;
-	top: 13px;
 	left: 0;
 	z-index: -1;
 
 	width: 100%;
-	height: 6px;
+	height: 1px;
 
-	border-top: 1px solid;
-	border-bottom: 1px solid;
-	border-image: linear-gradient(to right, transparent 0%, 
-																					rgba(241, 241, 241, 1) 20%, 
-																					rgba(228, 228, 228, 1) 50%, 
-																					rgba(241, 241, 241, 1) 80%, 
-																					transparent 100%);
-	border-image-slice: 20%;
+	background: -webkit-gradient(linear, left top, right top, from(transparent), 
+																						color-stop(20%, rgba(241, 241, 241, 1)), 
+																						color-stop(50%, rgba(228, 228, 228, 1)), 
+																						color-stop(85%, rgba(241, 241, 241, 1)), 
+																						to(transparent));
+
+	background: -webkit-linear-gradient(left, transparent 0%, 
+																						rgba(241, 241, 241, 1) 20%, 
+																						rgba(228, 228, 228, 1) 50%, 
+																						rgba(241, 241, 241, 1) 85%, 
+																						transparent 100%);
+
+	background: -o-linear-gradient(left, transparent 0%, 
+																						rgba(241, 241, 241, 1) 20%, 
+																						rgba(228, 228, 228, 1) 50%, 
+																						rgba(241, 241, 241, 1) 85%, 
+																						transparent 100%);
+
+	background: linear-gradient(to right, transparent 0%, 
+																						rgba(241, 241, 241, 1) 20%, 
+																						rgba(228, 228, 228, 1) 50%, 
+																						rgba(241, 241, 241, 1) 85%, 
+																						transparent 100%);
+
+}
+
+.offers-title::before {
+	top: 13px;
+}
+
+.offers-title::after {
+	top: 18px;
 }
 
 .offers-descr {
@@ -139,19 +174,27 @@
 }
 
 .offers-list {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-between;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 	padding: 0 0.5%;
 }
 
 @media (max-width: 692px) {
 	.offers-list {
-		flex-direction: column;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
 	}
 }
 
 .card {
-	flex-basis: 30.5%;
+	-ms-flex-preferred-size: 30.5%;
+	    flex-basis: 30.5%;
 	padding: 0 0.1%;
 	margin-bottom: 40px;
 
@@ -159,8 +202,11 @@
 }
 
 .card-img {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-self: center;
+	-ms-flex-item-align: center;
+	    align-self: center;
 	width: 100px;
 	height: 100px;
 	margin-bottom: 35px;
@@ -170,7 +216,9 @@
 }
 
 .card-body {
-	align-self: center;
+	-ms-flex-item-align: center;
+	    -ms-grid-row-align: center;
+	    align-self: center;
 	padding: 0;
 }
 
@@ -192,7 +240,6 @@
 
 	font-size: 14px;
 	color: #606060;
-	text-transform: uppercase;
 
 	letter-spacing: 0.4px;
 }
@@ -209,7 +256,9 @@
 	font-size: 10px;
 	color: #8a8a8a;
 
-	box-shadow: 0 0 0 1px #dedede;
+	-webkit-box-shadow: 0 0 0 1px #dedede;
+
+	        box-shadow: 0 0 0 1px #dedede;
 }
 
 .offers-btn {
@@ -222,7 +271,8 @@
 	color: #e3e3e3;
 
 	background-color: #00aeef;
-	box-shadow: none;
+	-webkit-box-shadow: none;
+	        box-shadow: none;
 }
 
 .features {
@@ -232,8 +282,13 @@
 }
 
 .features-container {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 	padding-right: 10px;
 
 	background: url("../img/tablet-width.png"), url("../img/tablet-height.png");
@@ -254,9 +309,15 @@
 }
 
 .features-key-wrapper {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
-	align-items: flex-start;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: start;
+	    -ms-flex-align: start;
+	        align-items: flex-start;
 	margin-bottom: 56px;	
 }
 
@@ -270,7 +331,11 @@
 	background: #00aeef;
 	border-radius: 5px;
 
-	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+
+	    -ms-transform: rotate(45deg);
+
+	        transform: rotate(45deg);
 }
 
 .features-key::after {
@@ -283,13 +348,21 @@
 	background: url("../img/svg/icon_key.svg") no-repeat center;
 	background-size: 22px 21px;
 
-	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+
+	    -ms-transform: rotate(-45deg);
+
+	        transform: rotate(-45deg);
 }
 
 .features-title {
 	position: relative;
 	
-	align-self: center;
+	-ms-flex-item-align: center;
+	
+	    -ms-grid-row-align: center;
+	
+	    align-self: center;
 	margin-bottom: 16px;
 
 	font-size: 26px;
@@ -312,13 +385,21 @@
 	background: #00aeef;
 	border-radius: 20%;
 
-	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+
+	    -ms-transform: rotate(45deg);
+
+	        transform: rotate(45deg);
 }
 
 .features-title::before {
 	left: -25%;
 
-	box-shadow: 
+	-webkit-box-shadow: 
+		-6px 6px 0 -1.5px rgba(0, 174, 239, 0.7),
+		-12px 12px 0 -2.5px rgba(0, 174, 239, 0.4);
+
+	        box-shadow: 
 		-6px 6px 0 -1.5px rgba(0, 174, 239, 0.7),
 		-12px 12px 0 -2.5px rgba(0, 174, 239, 0.4);
 }
@@ -326,7 +407,11 @@
 .features-title::after {
 	right: -25%;
 
-	box-shadow: 
+	-webkit-box-shadow: 
+		6px -6px 0 -1.4px rgba(0, 174, 239, 0.7),
+		12px -12px 0 -2.5px rgba(0, 174, 239, 0.4);
+
+	        box-shadow: 
 		6px -6px 0 -1.4px rgba(0, 174, 239, 0.7),
 		12px -12px 0 -2.5px rgba(0, 174, 239, 0.4);
 }
@@ -336,7 +421,9 @@
 }
 
 .features-descr {
-	align-self: center;
+	-ms-flex-item-align: center;
+	    -ms-grid-row-align: center;
+	    align-self: center;
 	margin-bottom: 87px;
 
 	font-family: "Myriad Pro", sans-serif;
@@ -396,7 +483,7 @@
 	}
 }
 
-.features-item-responsive::before {
+.features-icon-desktop::before {
 	left: 12px;	
 
 	width: 42px;
@@ -406,7 +493,7 @@
 	background-size: 44px 39px;
 }
 
-.features-item-marketing::before {
+.features-icon-puzzle::before {
 	left: 10px;
 
 	width: 43px;
@@ -416,7 +503,7 @@
 	background-size: 43px 41px;
 }
 
-.features-item-customers::before {
+.features-icon-star::before {
 	top: 4px;
 	left: 14px;
 
